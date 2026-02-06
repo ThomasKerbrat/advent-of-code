@@ -1,13 +1,12 @@
 "use strict";
 
-const fs = require("fs");
-const os = require("os");
 const path = require("path");
 const { question: q } = require("readline-sync");
+const { parseFile } = require("../utils/parser.js");
 const logger = require("../utils/logger");
 
 const inputPath = path.join(__dirname, "../../inputs/day01.txt");
-const inputFile = fs.readFileSync(inputPath, "utf-8");
+const inputFile = parseFile(inputPath);
 const input = parseInput(inputFile);
 
 console.log(part1(input));
@@ -181,12 +180,10 @@ function part2_V1(input) {
 	return res;
 }
 
-function parseInput(inputFile) {
+function parseInput(lines) {
 	const input = [];
-	const lines = inputFile.split(os.EOL);
 
 	for (let line of lines) {
-		if (line === "") continue;
 		input.push({
 			l: line,
 			d: line[0],

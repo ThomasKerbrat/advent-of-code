@@ -5,8 +5,12 @@
 const fs = require("fs");
 const os = require("os");
 
-export function parseFile(filePath) {
+function parseFile(filePath) {
 	return fs.readFileSync(filePath, "utf-8")
 		.split(os.EOL)
 		.filter(line => line != "");
+};
+
+module.exports = {
+	parseFile,
 };

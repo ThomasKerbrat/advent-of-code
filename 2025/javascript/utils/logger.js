@@ -21,9 +21,10 @@ class Logger {
 		return this;
 	}
 
-	log() {
+	log(...strs) {
 		if (this.emit === false) return this;
-		process.stdout.write(this.sb.join(this.sep));
+		if (strs.length) this.push(...strs);
+		console.log(this.sb.join(this.sep));
 		this.sb.length = 0;
 		return this;
 	}
