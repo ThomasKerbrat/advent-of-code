@@ -1,11 +1,11 @@
 "use strict";
 
-const path = require("path");
-const { question: q } = require("readline-sync");
-const { parseFile } = require("../utils/parser.js");
-const logger = require("../utils/logger");
+import path from "node:path";
+import { question as q } from "readline-sync";
+import { parseFile } from "../utils/parser.js";
+import logger from "../utils/logger.js";
 
-const inputPath = path.join(__dirname, "../../inputs/day01.txt");
+const inputPath = path.join("../../inputs/day01.txt");
 const inputFile = parseFile(inputPath);
 const input = parseInput(inputFile);
 

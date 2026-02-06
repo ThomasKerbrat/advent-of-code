@@ -1,11 +1,11 @@
 "use strict";
 
-const path = require("path");
-const logger = require("../utils/logger.js");
-const { parseFile } = require("../utils/parser.js");
-const math = require("../utils/math.js");
+import path from "node:path";
+import logger from "../utils/logger.js";
+import { parseFile } from "../utils/parser.js";
+import * as math from "../utils/math.js";
 
-const inputPath = path.join(__dirname, "../../inputs/day02.txt");
+const inputPath = path.join("../../inputs/day02.txt");
 const inputFile = parseFile(inputPath);
 const input = parseInput(inputFile);
 

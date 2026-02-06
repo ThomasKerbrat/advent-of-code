@@ -2,15 +2,11 @@
 
 "use strict";
 
-const fs = require("fs");
-const os = require("os");
+import fs from "node:fs";
+import os from "node:os";
 
-function parseFile(filePath) {
+export function parseFile(filePath) {
 	return fs.readFileSync(filePath, "utf-8")
 		.split(os.EOL)
 		.filter(line => line != "");
-};
-
-module.exports = {
-	parseFile,
 };

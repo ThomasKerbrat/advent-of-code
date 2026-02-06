@@ -1,14 +1,10 @@
 "use strict";
 
-module.exports = {
-	factors,
-};
-
 /**
  * Computes the factors of a given number.
  * @param {number} n An integer number expected to be positive
  */
-function factors(n) {
+export function factors(n) {
 	if (n <= 0) {
 		throw new RangeError(`utils/math.factor: argument is expected to be positive`);
 	}
